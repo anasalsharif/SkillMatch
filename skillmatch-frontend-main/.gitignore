@@ -43,8 +43,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-talent_link/linux/flutter/generated_plugin_registrant.cc
-talent_link/linux/flutter/generated_plugins.cmake
-talent_link/macos/Flutter/GeneratedPluginRegistrant.swift
-talent_link/windows/flutter/generated_plugin_registrant.cc
-talent_link/windows/flutter/generated_plugins.cmake
+skillmatch-web/linux/flutter/generated_plugin_registrant.cc
+skillmatch-web/linux/flutter/generated_plugins.cmake
+skillmatch-web/macos/Flutter/GeneratedPluginRegistrant.swift
+skillmatch-web/windows/flutter/generated_plugin_registrant.cc
+skillmatch-web/windows/flutter/generated_plugins.cmake

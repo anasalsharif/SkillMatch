@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:typed_data';
 import 'dart:html' as html;
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'file_uploader_interface.dart';
 
 class WebFileUploader implements FileUploaderInterface {
@@ -38,9 +39,8 @@ class WebFileUploader implements FileUploaderInterface {
   @override
   Future<String?> uploadFile(Uint8List fileBytes, String token) async {
     try {
-      final uri = Uri.parse(
-        'https://talentlink-api.onrender.com/users/upload-cv',
-      );
+      final baseUrl = dotenv.env['BASE_URL'] ?? 'http://localhost:5000/api';
+      final uri = Uri.parse('$baseUrl/users/upload-cv');
 
       final formData = html.FormData();
       final blob = html.Blob([fileBytes]);

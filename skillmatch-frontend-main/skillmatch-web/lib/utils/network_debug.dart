@@ -128,7 +128,7 @@ class NetworkDebug {
     final results = await testConnection();
 
     print("\n" + "=" * 50);
-    print("🔍 TALENTLINK NETWORK DIAGNOSTICS");
+    print("SkillMatch network diagnostics");
     print("=" * 50);
 
     results.forEach((key, value) {

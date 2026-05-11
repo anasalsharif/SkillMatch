@@ -8,7 +8,7 @@ $ErrorActionPreference = "Stop"
 
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $BackendDir = Join-Path $Root "skillmatch-backend-main"
-$FrontendDir = Join-Path $Root "skillmatch-frontend-main\talent_link"
+$FrontendDir = Join-Path $Root "skillmatch-frontend-main\skillmatch-web"
 
 $Node = "C:\Program Files\nodejs\node.exe"
 $Npm = "C:\Program Files\nodejs\npm.cmd"

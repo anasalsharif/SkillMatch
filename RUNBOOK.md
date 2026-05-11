@@ -3,7 +3,7 @@
 This workspace contains the SkillMatch Platform capstone app:
 
 - Backend: `skillmatch-backend-main`
-- Flutter app: `skillmatch-frontend-main/talent_link`
+- Flutter app: `skillmatch-frontend-main/skillmatch-web`
 
 ## 1. Backend Setup
 
@@ -95,7 +95,7 @@ MongoDB disabled: set MONGO_URI in .env to your Atlas skillmatch database.
 Copy the frontend environment template:
 
 ```powershell
-Copy-Item skillmatch-frontend-main\talent_link\api.env.example skillmatch-frontend-main\talent_link\api.env
+Copy-Item skillmatch-frontend-main\skillmatch-web\api.env.example skillmatch-frontend-main\skillmatch-web\api.env
 ```
 
 For Edge/web local testing, use:
@@ -115,7 +115,7 @@ BASE_URL2=http://10.0.2.2:5000
 Install Flutter dependencies:
 
 ```powershell
-cd skillmatch-frontend-main\talent_link
+cd skillmatch-frontend-main\skillmatch-web
 & "C:\dev\flutter\bin\flutter.bat" pub get
 ```
 

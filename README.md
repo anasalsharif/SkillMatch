@@ -16,7 +16,7 @@ The defended scope is the web application:
 ```text
 SkillMatch/
 ├─ skillmatch-backend-main/           # Express API, MongoDB models, matching, OCR/AI pipeline
-├─ skillmatch-frontend-main/talent_link/ # Flutter Web app
+├─ skillmatch-frontend-main/skillmatch-web/ # Flutter Web app
 ├─ docs/                              # Report draft/source notes
 ├─ defense-prep/                      # Presentation and discussion materials
 ├─ RUNBOOK.md                         # Local setup and demo instructions
@@ -29,7 +29,7 @@ Copy the environment templates first:
 
 ```powershell
 Copy-Item skillmatch-backend-main\.env.example skillmatch-backend-main\.env
-Copy-Item skillmatch-frontend-main\talent_link\api.env.example skillmatch-frontend-main\talent_link\api.env
+Copy-Item skillmatch-frontend-main\skillmatch-web\api.env.example skillmatch-frontend-main\skillmatch-web\api.env
 ```
 
 Then edit the local files with your own MongoDB, Google Cloud, Firebase, email, and AI provider values.
@@ -64,7 +64,7 @@ The seeded scenario includes a job seeker profile, organization jobs, applicatio
 Real credentials are intentionally excluded from Git. Keep these files local:
 
 - `skillmatch-backend-main/.env`
-- `skillmatch-frontend-main/talent_link/api.env`
+- `skillmatch-frontend-main/skillmatch-web/api.env`
 - Firebase service account JSON files
 - Google Cloud service account JSON files
 - Android `google-services.json`
