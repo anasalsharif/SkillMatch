@@ -1,0 +1,2 @@
+-keep class com.skillmatch.platform.** { *; }
+-keep class androidx.** { *; }

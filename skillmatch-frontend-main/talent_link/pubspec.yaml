@@ -1,0 +1,64 @@
+name: skillmatch_platform
+description: "SkillMatch Platform capstone application."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_dotenv: ^5.1.0
+  cupertino_icons: ^1.0.8
+  http: ^1.4.0
+  jwt_decoder: ^2.0.1
+  googleapis: ^14.0.0
+  googleapis_auth: ^2.0.0
+  socket_io_client: ^3.1.2
+  image_picker: ^1.1.2
+  file_picker: ^10.1.9
+  url_launcher: ^6.3.1
+  device_preview: ^1.2.0
+  intl: ^0.20.2
+  web_socket_channel: ^3.0.3
+  zego_uikit_prebuilt_video_conference: ^2.11.1
+  permission_handler: ^12.0.1
+  google_maps_flutter: ^2.12.1
+  geolocator: ^14.0.0
+  flutter_polyline_points: ^2.1.0
+  logger: ^2.0.2+1
+  flutter_keyboard_visibility: ^6.0.0
+  
+  
+
+  firebase_core: ^3.13.0
+  firebase_messaging: ^15.2.5
+  shared_preferences: ^2.0.15
+  flutter_local_notifications: ^18.0.1
+  provider: ^6.0.5
+
+  flutter_typeahead: ^5.2.0
+  geocoding: ^3.0.0
+  syncfusion_flutter_pdfviewer: ^29.2.4
+  uuid: ^4.1.0
+  jitsi_meet_flutter_sdk: ^11.1.1
+  
+  
+  
+
+
+ 
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - api.env

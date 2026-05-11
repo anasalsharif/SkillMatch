@@ -1,0 +1,5 @@
+<resources>
+    <color name="colorPrimary">#FF0C9E91</color> <!-- Your app's primary color -->
+    <color name="colorPrimaryDark">#FF0A7D72</color> <!-- Darker version -->
+    <color name="colorAccent">#FF03DAC5</color> <!-- Accent color -->
+</resources>

@@ -1,0 +1,37 @@
+# Local secrets
+**/.env
+**/api.env
+**/*.env
+**/*service-account*.json
+**/*firebase-adminsdk*.json
+**/*google-services.json
+**/GoogleService-Info.plist
+**/*credentials*.json
+**/*-key.json
+**/local.properties
+
+# Dependencies and build outputs
+**/node_modules/
+**/.dart_tool/
+**/build/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.pub-cache/
+**/.pub/
+**/coverage/
+**/dist/
+.vscode/
+**/.vscode/
+
+# Local logs and generated runtime files
+*.log
+backend*.log
+flutter*.log
+screen*.png
+.tmp/
+.npm-cache/
+uploads/
+archive/
+.trash-archive-locked/
+desktop.ini
+SUBMIT_THIS_REPORT/
