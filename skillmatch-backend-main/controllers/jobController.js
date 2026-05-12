@@ -319,12 +319,16 @@ const addJob = async (req,res) => {
         if(!organaization){
             return res.status(404).json({ message: "Organization Not found"});
         }
+        const normalizedJobType = ['Full-Time', 'Part-Time', 'Remote', 'Internship', 'Contract'].includes(jobType)
+            ? jobType
+            : 'Full-Time';
+
         const newJob = new Job({
             title,
             description,
             location,
             salary,
-            jobType,
+            jobType: normalizedJobType,
             category,
             deadline,
             requirements,

@@ -38,6 +38,7 @@ class _AddNewJobScreenState extends State<AddNewJobScreen>
   String? selectedFilePath;
   String? aiTextInput;
   bool isLoading = false;
+  static const String defaultJobType = 'Full-Time';
 
   DateTime selectedDeadline = DateTime.now().add(Duration(days: 30));
   final List<String> jobTypes = [
@@ -311,9 +312,9 @@ class _AddNewJobScreenState extends State<AddNewJobScreen>
                     const SizedBox(height: 16),
                     DropdownButtonFormField<String>(
                       value:
-                          jobTypeController.text.isNotEmpty
+                          jobTypes.contains(jobTypeController.text)
                               ? jobTypeController.text
-                              : null,
+                              : defaultJobType,
                       decoration: InputDecoration(
                         labelText: 'Job Type',
                         border: OutlineInputBorder(
@@ -606,6 +607,11 @@ class _AddNewJobScreenState extends State<AddNewJobScreen>
   }
 
   void submitJob() async {
+    final jobType =
+        jobTypes.contains(jobTypeController.text)
+            ? jobTypeController.text
+            : defaultJobType;
+
     final url =
         isUpdate
             //10.0.2.2
@@ -626,7 +632,7 @@ class _AddNewJobScreenState extends State<AddNewJobScreen>
           'description': jobDescriptionController.text,
           'location': locationController.text,
           'salary': salaryController.text,
-          'jobType': jobTypeController.text,
+          'jobType': jobType,
           'category': categoryController.text,
           'requirements': requirementsList,
           'responsibilities': responsibilitiesList,
