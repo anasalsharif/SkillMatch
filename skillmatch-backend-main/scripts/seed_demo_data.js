@@ -106,7 +106,7 @@ async function main() {
   });
 
   const jobSeeker = await upsertUser({
-    name: 'Maya Johnson',
+    name: 'Anas Ramadan Jummah Alsharif',
     username: 'jobseeker',
     email: 'jobseeker@demo.com',
     phone: '1111111111',
@@ -122,9 +122,9 @@ async function main() {
     socketIds: [],
     fcmTokens: [],
     notificationSettings: { chat: true, calls: true },
-    avatarUrl: avatar('Maya Johnson', '2563eb'),
-    cvUrl: 'https://storage.googleapis.com/skillmatch-bucket/demo/maya-johnson-cv.pdf',
-    analyzedCV: 'https://storage.googleapis.com/skillmatch-bucket/demo/maya-johnson-analysis.json',
+    avatarUrl: avatar('Anas Alsharif', '2563eb'),
+    cvUrl: 'https://storage.googleapis.com/skillmatch-bucket/demo/anas-alsharif-cv.pdf',
+    analyzedCV: 'https://storage.googleapis.com/skillmatch-bucket/demo/anas-alsharif-analysis.json',
     followers: ['demoorg'],
     following: ['freelancer', 'demoorg'],
   });
@@ -152,7 +152,7 @@ async function main() {
   });
 
   const designer = await upsertUser({
-    name: 'Lina Patel',
+    name: 'Yazan Ali Mohammad Mousa',
     username: 'designer',
     email: 'designer@demo.com',
     phone: '3333333333',
@@ -168,13 +168,13 @@ async function main() {
     socketIds: [],
     fcmTokens: [],
     notificationSettings: { chat: true, calls: true },
-    avatarUrl: avatar('Lina Patel', '9333ea'),
+    avatarUrl: avatar('Yazan Mousa', '9333ea'),
     followers: ['jobseeker'],
     following: ['demoorg'],
   });
 
   const developer = await upsertUser({
-    name: 'Noah Smith',
+    name: 'Rafat Raed Ramez Abualhuda',
     username: 'developer',
     email: 'developer@demo.com',
     phone: '4444444444',
@@ -190,7 +190,7 @@ async function main() {
     socketIds: [],
     fcmTokens: [],
     notificationSettings: { chat: true, calls: true },
-    avatarUrl: avatar('Noah Smith', 'ea580c'),
+    avatarUrl: avatar('Rafat Abualhuda', 'ea580c'),
     followers: ['freelancer'],
     following: ['demoorg', 'healthorg'],
   });
@@ -308,6 +308,78 @@ async function main() {
       responsibilities: ['Run user interviews', 'Summarize findings', 'Prototype workflow improvements'],
       companyId: healthOrg._id,
     },
+    {
+      title: 'Data Analyst Trainee',
+      description: 'Prepare dashboards and simple reports for hiring, applications, and user engagement data.',
+      location: 'Remote',
+      salary: '$52,000 - $62,000',
+      jobType: 'Full-Time',
+      category: 'Demo: Data',
+      deadline: new Date(Date.now() + 1000 * 60 * 60 * 24 * 35),
+      requirements: ['SQL', 'Excel', 'Dashboards', 'Data cleaning', 'Communication'],
+      responsibilities: ['Clean datasets', 'Build weekly reports', 'Explain trends to product teams'],
+      companyId: org._id,
+    },
+    {
+      title: 'Cloud Support Associate',
+      description: 'Help maintain cloud storage, deployment checks, and API environment configuration.',
+      location: 'Austin, TX',
+      salary: '$58,000 - $70,000',
+      jobType: 'Full-Time',
+      category: 'Demo: Cloud',
+      deadline: new Date(Date.now() + 1000 * 60 * 60 * 24 * 42),
+      requirements: ['Google Cloud', 'Storage buckets', 'Node.js', 'Logs', 'Troubleshooting'],
+      responsibilities: ['Monitor cloud services', 'Support deployment issues', 'Document incidents'],
+      companyId: org._id,
+    },
+    {
+      title: 'Application Security Intern',
+      description: 'Review authentication, file upload, and API security practices in a web platform.',
+      location: 'Chicago, IL',
+      salary: '$27/hr',
+      jobType: 'Internship',
+      category: 'Demo: Security',
+      deadline: new Date(Date.now() + 1000 * 60 * 60 * 24 * 28),
+      requirements: ['JWT', 'Input validation', 'OWASP basics', 'API testing', 'JavaScript'],
+      responsibilities: ['Test protected routes', 'Review upload handling', 'Document security risks'],
+      companyId: org._id,
+    },
+    {
+      title: 'Digital Marketing Coordinator',
+      description: 'Create campaign content for job seekers, freelancers, and organization onboarding.',
+      location: 'Remote',
+      salary: '$48,000 - $56,000',
+      jobType: 'Remote',
+      category: 'Demo: Marketing',
+      deadline: new Date(Date.now() + 1000 * 60 * 60 * 24 * 32),
+      requirements: ['Copywriting', 'Social media', 'Canva', 'Analytics', 'Campaign planning'],
+      responsibilities: ['Write campaign copy', 'Prepare weekly content plans', 'Track engagement'],
+      companyId: org._id,
+    },
+    {
+      title: 'Healthcare Volunteer Coordinator',
+      description: 'Coordinate volunteers for patient support events and community health campaigns.',
+      location: 'Seattle, WA',
+      salary: '$22/hr',
+      jobType: 'Part-Time',
+      category: 'Demo: Healthcare',
+      deadline: new Date(Date.now() + 1000 * 60 * 60 * 24 * 50),
+      requirements: ['Volunteer coordination', 'Scheduling', 'Communication', 'Healthcare interest'],
+      responsibilities: ['Coordinate volunteer shifts', 'Communicate with participants', 'Prepare event lists'],
+      companyId: healthOrg._id,
+    },
+    {
+      title: 'Frontend QA Tester',
+      description: 'Test responsive web screens, report UI issues, and verify application workflows.',
+      location: 'Dallas, TX',
+      salary: '$24/hr',
+      jobType: 'Contract',
+      category: 'Demo: QA',
+      deadline: new Date(Date.now() + 1000 * 60 * 60 * 24 * 24),
+      requirements: ['UI Testing', 'Bug reports', 'Flutter Web', 'Chrome DevTools', 'Regression testing'],
+      responsibilities: ['Run web test passes', 'Write bug reports', 'Verify fixes across screen sizes'],
+      companyId: org._id,
+    },
   ]);
 
   await Location.findOneAndUpdate(
@@ -349,13 +421,29 @@ async function main() {
       organizationId: healthOrg._id,
       matchScore: 91,
     },
+    {
+      userId: jobSeeker._id,
+      username: jobSeeker.username,
+      userName: jobSeeker.name,
+      jobId: jobs[8]._id,
+      jobTitle: jobs[8].title,
+      organizationId: org._id,
+      matchScore: 86,
+    },
   ]);
 
   await JobMatch.insertMany([
     { userId: jobSeeker._id, jobId: jobs[0]._id, matchScore: 88 },
     { userId: jobSeeker._id, jobId: jobs[1]._id, matchScore: 73 },
+    { userId: jobSeeker._id, jobId: jobs[3]._id, matchScore: 58 },
+    { userId: jobSeeker._id, jobId: jobs[8]._id, matchScore: 86 },
     { userId: developer._id, jobId: jobs[1]._id, matchScore: 94 },
+    { userId: developer._id, jobId: jobs[4]._id, matchScore: 82 },
+    { userId: developer._id, jobId: jobs[5]._id, matchScore: 76 },
     { userId: designer._id, jobId: jobs[2]._id, matchScore: 91 },
+    { userId: designer._id, jobId: jobs[6]._id, matchScore: 64 },
+    { userId: freelancer._id, jobId: jobs[6]._id, matchScore: 79 },
+    { userId: freelancer._id, jobId: jobs[3]._id, matchScore: 52 },
   ]);
 
   await Post.insertMany([
@@ -434,7 +522,7 @@ async function main() {
     {
       senderId: org._id,
       receiverId: jobSeeker._id,
-      message: 'Demo: Hi Maya, your Flutter profile is a strong match for our junior role.',
+      message: 'Demo: Hi Anas, your Flutter profile is a strong match for our junior role.',
       timestamp: new Date(Date.now() - 1000 * 60 * 45),
       isRead: true,
     },
@@ -481,7 +569,7 @@ async function main() {
       sender: developer.username,
       receiver: org.username,
       title: 'Demo: New applicant',
-      body: 'Noah Smith applied to Backend API Intern.',
+      body: 'Rafat Abualhuda applied to Backend API Intern.',
       jobId: jobs[1]._id,
     }),
   ]);

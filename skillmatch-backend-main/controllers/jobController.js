@@ -266,7 +266,7 @@ Match Score:
 
           // 👉 Save the new match score
         } catch (apiError) {
-          console.warn("OpenAI match scoring unavailable; using local scoring:", apiError.message);
+          console.warn(`${openai.provider} match scoring unavailable; using local scoring:`, apiError.message);
           matchScorePercentage = localMatchScore(userSkills, job);
         }
       }
@@ -630,7 +630,7 @@ ${extractedText}
         const jsonMatch = responseContent.match(/\{[\s\S]*\}/);
         jobData = JSON.parse(jsonMatch ? jsonMatch[0] : responseContent);
       } catch (apiError) {
-        console.warn("OpenAI job extraction unavailable; using local parser:", apiError.message);
+        console.warn(`${openai.provider} job extraction unavailable; using local parser:`, apiError.message);
       }
     }
 

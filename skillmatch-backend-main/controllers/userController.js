@@ -234,7 +234,7 @@ const uploadCV = async (req, res) => {
         structuredJsonString = structuredJsonString.replace(/```json|```/g, '').trim();
         parsedData = JSON.parse(structuredJsonString);
       } catch (apiError) {
-        console.warn("OpenAI CV extraction unavailable; using local parser:", apiError.message);
+        console.warn(`${openai.provider} CV extraction unavailable; using local parser:`, apiError.message);
       }
     }
 
